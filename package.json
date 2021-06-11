@@ -1,7 +1,7 @@
 {
-  "name": "ux-ui",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@tomnpmtom/ux-ui",
+  "version": "0.1.1",
+  "private": false,
   "dependencies": {
     "@fontsource/inconsolata": "^4.4.5",
     "@fontsource/major-mono-display": "^4.4.5",
@@ -53,12 +53,35 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/node-logger": "^6.2.9",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
+    "auto": "^10.29.3",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
+    "cross-env": "^7.0.3",
     "prettier": "^2.3.1"
-  }
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-react",
+        {
+          "runtime": "automatic"
+        }
+      ]
+    ]
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "repository": "git@github.com:tom2u/ux-ui.git",
+  "author": "tom2u <tbrodhead@2u.com>",
+  "license": "MIT",
+  "description": "A component library to support the UP/Hill Design System"
 }
